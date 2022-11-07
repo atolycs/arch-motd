@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Setup environ
+SCRIPT_NAME="$(basename $0)"
+SCRIPT_PATH="$(realpath $0)"
+
+
+# Load Library
+echo "$BASE_ROOT"
+echo "$SCRIPT_PATH"
+
+
+# 
