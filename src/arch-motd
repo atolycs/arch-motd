@@ -1,13 +1,29 @@
 #!/usr/bin/env bash
 
 # Setup environ
+LIB_DIR="%LIB_DIR%"
 SCRIPT_NAME="$(basename $0)"
 SCRIPT_PATH="$(realpath $0)"
 
+_disable_check() {
+    if [ -f ${HOME}/.hushlogin ];then
+        die 0
+    fi
+}
+
+die() {
+  exit $1
+}
+
 
 # Load Library
-echo "$BASE_ROOT"
-echo "$SCRIPT_PATH"
+
+main() {
+    _disable_check
+    echo "$SCRIPT_NAME"
+    echo "$SCRIPT_PATH"
+}
 
 
+main $@
 # 
